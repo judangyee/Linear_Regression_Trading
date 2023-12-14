@@ -1,7 +1,14 @@
 # Linear_Regression_Trading
 ## 1. Theory
-선형회귀란 한 개 이상의 원인과 결과 간의 관계를 추정하는 모델링 기법으로 주로 금융 시장 예측, 제품의 판매량 예측 등 다양한 분야에서 사용된다. 제작자는 이를 트레이딩에 접목해보고자 했다. 주가가 회귀선을 기준으로 위아래로 변동하며 상승하는 움직임을 보였다. 이를 바탕으로 주가가 회귀선을 기준으로 변동한다는 사실을 기반한 트레이딩 전략을 만들었다. 
-[참고한 사이트]: [https://direction-f.tistory.com/8]
+Linear regression is a modeling technique that estimates the relationship between one or more causes and results and is mainly used in various fields such as financial market forecasting and product sales forecasting. 
+The creator wanted to apply this to trading.The stock price showed an upward movement, fluctuating up and down based on the regression 
+line. Based on this, we created a trading strategy based on the fact that stock prices fluctuate based on the regression line. 
+선형회귀란 한 개 이상의 원인과 결과 간의 관계를 추정하는 모델링 기법으로 주로 금융 시장 예측, 제품의 판매량 예측 등 다양한 분야에서 사용된다. 제작자는 이를 트레이딩에 접목해보고자 했다.
+주가가 회귀선을 기준으로 위아래로 변동하며 상승하는 움직임을 보였다. 이를 바탕으로 주가가 회귀선을 기준으로 변동한다는 사실을 기반한 트레이딩 전략을 만들었다.
+
+참고한 사이트: [https://direction-f.tistory.com/8]
+
+---
 ## 2.Trading Algorithm
 1. 주가 입력 받음(FinanceDataReader를 사용)
 2. 주가를 회귀 분석(회귀선의 y좌표: y_pred)
@@ -11,3 +18,43 @@
 6. 첫번째 거미줄부터 매수 주문
 7. 대기
 8. 다시 만나는 지점에서 매도
+
+---
+
+## 3.Things to keep in mind
+In this Program I use only stock price of close price. 
+You can try with anothe price.
+If you want to change the source of the data like yfinance, quantlib etc.
+Please make sure date and closing price(or another data) are on the same row
+If you make better model or have a  question about this program contact with my insatgram on my profile 
+If you have a problem with pykiwoom api. I can't give you a help because I don't have any author to solve the api problem.
+So if you have a problem with api use another that you can use
+
+---
+
+## You have to see before using this program!!!
+***Caution***
+API about stock(In this Program pykiwoom api) support only ***32bit*** python. So if you use 64bit python this program 
+may not work
+
+---
+
+Using Data
+The Data of Samsung(stockCode: 005930) 2018/01/01 ~ 2023/12/15 (from FinanceDatareader)
+Trading With Kiwoom Securities
+
+Python 3.12.0    ***(32bit)*** 
+
+financedatareader 0.9.66
+
+matplotlib 3.8.2
+
+numpy 1.26.2
+
+ploty 5.18.0
+
+pygame2.5.2
+
+scikit-learn 1.3.2
+
+scipy 1.11.4
