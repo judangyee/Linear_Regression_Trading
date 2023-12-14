@@ -3,6 +3,7 @@
 Linear regression is a modeling technique that estimates the relationship between one or more causes and results and is mainly used in various fields such as financial market forecasting and product sales forecasting. 
 The creator wanted to apply this to trading.The stock price showed an upward movement, fluctuating up and down based on the regression 
 line. Based on this, we created a trading strategy based on the fact that stock prices fluctuate based on the regression line. 
+
 선형회귀란 한 개 이상의 원인과 결과 간의 관계를 추정하는 모델링 기법으로 주로 금융 시장 예측, 제품의 판매량 예측 등 다양한 분야에서 사용된다. 제작자는 이를 트레이딩에 접목해보고자 했다.
 주가가 회귀선을 기준으로 위아래로 변동하며 상승하는 움직임을 보였다. 이를 바탕으로 주가가 회귀선을 기준으로 변동한다는 사실을 기반한 트레이딩 전략을 만들었다.
 
@@ -10,14 +11,15 @@ line. Based on this, we created a trading strategy based on the fact that stock 
 
 ---
 ## 2.Trading Algorithm
-1. 주가 입력 받음(FinanceDataReader를 사용)
-2. 주가를 회귀 분석(회귀선의 y좌표: y_pred)
-3. 주가의 상태를 회귀선을 하향돌파, 또는 상향돌파하는지 탐색
-4. 만약 하향돌파한다면 매수준비(하향, 상향 관찰은 이전과의 기울기로 판단)
+1. 주가 입력 받음 (Import data with FinanacedataReader)
+2. 주가를 회귀 분석 (LinearRegression Analysis with code)
+3. 주가의 상태를 회귀선을 하향돌파, 또는 상향돌파하는지 탐색 (Keep watching stock chart and regression line 's state)
+4. 만약 하향돌파한다면 매수준비(하향, 상향 관찰은 이전과의 기울기로 판단)(If stock chart's dicipline is smaller than 0 and cross the regression Line we have to prepare for buying)
 5. 거미줄 매매를 위해 매수선의 매수단위 계산(매수단위는 회귀선과 주가간의 변동폭의 절댓값의 평균을 10으로 나눠 계산)
-6. 첫번째 거미줄부터 매수 주문
-7. 대기
-8. 다시 만나는 지점에서 매도
+
+(Divide the average of the absolute value of the fluctuation between the regression line and the stock price by 10 to determine the purchase unit and place a purchase order.)
+
+6. 다시 만나는 지점에서 매도 (Sell all order when stock line cross the regression line again)
 
 ---
 
